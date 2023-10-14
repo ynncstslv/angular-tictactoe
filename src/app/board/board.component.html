@@ -1,5 +1,8 @@
-<section class="w-full">
-  <div class="square-container h-48" *ngFor="let square of gameService.board">
+<section class="w-[90%] mx-auto my-[8%] md:w-[600px] md:my-[4%] lg:my-[2%]">
+  <div
+    class="square-container h-24 md:h-48"
+    *ngFor="let square of gameService.board"
+  >
     <app-square [square]="square"></app-square>
   </div>
 </section>

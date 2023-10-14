@@ -1,24 +1,35 @@
-<div
-  class="min-w-screen min-h-screen bg-gradient-to-b from-neutral-900 to-neutral-950"
->
-  <div class="header pt-20">
+<div class="h-full bg-gradient-to-b from-neutral-900 to-neutral-950">
+  <div class="header pt-10">
     <h1 class="text-5xl text-center text-pink-300">
       tic. <span class="text-pink-400">tac.</span>
       <span class="text-pink-500"> toe.</span>
     </h1>
-    <!-- display the player -->
-    <h2 class="mt-8 font-extralight text-xl text-center text-neutral-500">
-      Turn {{ gameService.turnCount }}: {{ gameService.activePlayer }}'s turn.
+    <!-- turn -->
+    <h2
+      class="mt-8 font-extralight text-xl text-center text-neutral-500"
+      *ngIf="!gameService.winner"
+    >
+      Turn {{ gameService.turnCount }}:
+      <span class="text-teal-300">{{ gameService.activePlayer }}'s turn.</span>
     </h2>
-    <!-- winner -->
     <h3
-      class="mt-8 font-extralight text-4xl text-center text-pink-500"
+      class="mt-8 font-extralight text-2xl text-center text-pink-400"
       *ngIf="gameService.winner"
     >
-      {{ gameService.activePlayer }} won!
+      <span class="text-neutral-500">Winner:</span>
+      {{ gameService.activePlayer }}
     </h3>
   </div>
   <app-board></app-board>
+  <div class="w-[90%] flex items-center justify-center mx-auto md:w-[600px]">
+    <button
+      class="w-full h-12 text-sm text-neutral-950 rounded-lg bg-pink-400 transition hover:opacity-90"
+      *ngIf="gameService.gameOver"
+      (click)="resetGame()"
+    >
+      Reset the game
+    </button>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

@@ -10,4 +10,8 @@ export class AppComponent {
   title = 'angular-tictactoe';
 
   constructor(public gameService: GameService) {}
+
+  resetGame() {
+    this.gameService.newGame();
+  }
 }
