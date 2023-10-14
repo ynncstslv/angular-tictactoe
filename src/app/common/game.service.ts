@@ -29,7 +29,7 @@ export class GameService {
     let board = [];
 
     for (let i = 0; i < 9; i++) {
-      board.push({ id: 1, state: null });
+      board.push({ id: i, state: null });
     }
 
     return board;
