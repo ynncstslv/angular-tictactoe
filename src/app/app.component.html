@@ -6,6 +6,17 @@
       tic. <span class="text-pink-400">tac.</span>
       <span class="text-pink-500"> toe.</span>
     </h1>
+    <!-- display the player -->
+    <h2 class="mt-8 font-extralight text-xl text-center text-neutral-500">
+      Turn {{ gameService.turnCount }}: {{ gameService.activePlayer }}'s turn.
+    </h2>
+    <!-- winner -->
+    <h3
+      class="mt-8 font-extralight text-4xl text-center text-pink-500"
+      *ngIf="gameService.winner"
+    >
+      {{ gameService.activePlayer }} won!
+    </h3>
   </div>
   <app-board></app-board>
 </div>

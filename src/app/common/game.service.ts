@@ -56,7 +56,7 @@ export class GameService {
   updateBoard(squareClicked: any) {
     this.board[squareClicked.id].state = squareClicked.state;
 
-    if (this.winner) {
+    if (this.isWinner) {
       this.winner = true;
       this.isGameRunning = false;
       this.isGameOver = true;
