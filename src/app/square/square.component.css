@@ -1,0 +1,20 @@
+.game-square {
+  height: 100%;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+}
+
+p {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  overflow: hidden;
+}
+
+.noClick {
+  pointer-events: none;
+}
